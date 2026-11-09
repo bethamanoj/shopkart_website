@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>All Products</h2>
+<a href="/add-product" class="add-product-btn">
+    + Add Product
+</a>
+
+<div class="product-container">
+
+    {% if products %}
+
+        {% for product in products %}
+
+            <div class="product-card">
+
+                {% if product.discount_price %}
+                    <span class="discount">
+                        {{ (((product.price - product.discount_price) / product.price) * 100)|round|int }}% OFF
+                    </span>
+                {% endif %}
+
+                <div class="product-image">
+                    <img src="/static/images/{{ product.image }}"
+                         alt="{{ product.name }}">
+                </div>
+
+                <div class="product-details">
+
+                    <h3>{{ product.name }}</h3>
+
+                    <div class="price">
+
+                        {% if product.discount_price %}
+                            <strong class="current-price">
+                                ₹{{ "{:,.0f}".format(product.discount_price) }}
+                            </strong>
+
+                            <del class="old-price">
+                                ₹{{ "{:,.0f}".format(product.price) }}
+                            </del>
+                        {% else %}
+                            <strong class="current-price">
+                                ₹{{ "{:,.0f}".format(product.price) }}
+                            </strong>
+                        {% endif %}
+
+                    </div>
+
+                    <p>Available: {{ product.quantity }}</p>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No products available yet.</p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

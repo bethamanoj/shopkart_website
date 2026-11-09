@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to ShopKart</h1>
+        <h2>Discover Products of your Choice</h2>
+        <p class="hero-description">
+            Shop your favourite products at the best prices.
+            Quality products, great deals with a better shopping experience.
+            Enjoy your day by shopping with us.
+            Have a great day and a good shopping.
+        </p>
+        <a href="/products" class="shop-button">Explore Products</a>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="category-heading">
+        <h2>Shop By Category</h2>
+        <a href="/categories">View All Products &rarr;</a>
+    </div>
+    <div class="category-container">
+        <div class="category-card">
+            <h3>Electronics</h3>
+        </div>
+        <div class="category-card">
+            <h3>Fashion</h3>
+        </div>
+        <div class="category-card">
+            <h3>Footware</h3>
+        </div>
+        <div class="category-card">
+            <h3>Home & Living</h3>
+        </div>
+        <div class="category-card">
+            <h3>Beauty</h3>
+        </div>
+        <div class="category-card">
+            <h3>Books</h3>
+        </div>
+        <div class="category-card">
+            <h3>Sports</h3>
+        </div>
+        <div class="category-card">
+            <h3>Gaming</h3>
+        </div>
+    </div>
+</section>
+
+<section class="featured-products">
+    <div class="section-heading">
+        <h2>Featured Products</h2>
+        <a href="/products">View All Products &rarr;</a>
+    </div>
+    <div class="product-container">
+        <div class="product-card">
+            <span class="discount">13% OFF</span>
+            <div class="product-image">
+                <img src="{{ url_for('static', path='images/product1.jpeg')}}" alt="Smartphone">
+            </div>
+            <div class="product-details">
+                <h3>Smartphone</h3>
+                <div class="price">
+                    <span class="current-price">₹84,999</span>
+                    <span class="old-price">₹1,04,999</span>
+                </div>
+                <a href="/products" class="view-button">View Product</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <span class="discount">15% OFF</span>
+            <div class="product-image">
+                <img src="{{ url_for('static', path='images/product2.jpeg')}}" alt="Headphones">
+            </div>
+            <div class="product-details">
+                <h3>Headphones</h3>
+                <div class="price">
+                    <span class="current-price">₹3,499</span>
+                    <span class="old-price">₹4,999</span>
+                </div>
+                <a href="/products" class="view-button">View Product</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <span class="discount">38% OFF</span>
+            <div class="product-image">
+                <img src="{{ url_for('static', path='images/product3.jpeg')}}" alt="Smart Watch">
+            </div>
+            <div class="product-details">
+                <h3>Smart Watch</h3>
+                <div class="price">
+                    <span class="current-price">₹2,499</span>
+                    <span class="old-price">₹3,999</span>
+                </div>
+                <a href="/products" class="view-button">View Product</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <span class="discount">10% OFF</span>
+            <div class="product-image">
+                <img src="{{ url_for('static', path='images/product4.jpeg')}}" alt="Laptop">
+            </div>
+            <div class="product-details">
+                <h3>Laptop</h3>
+                <div class="price">
+                    <span class="current-price">₹67,999</span>
+                    <span class="old-price">₹72,999</span>
+                </div>
+                <a href="/products" class="view-button">View Product</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="benefit-card">
+        <h3>Free Delivery</h3>
+        <p>Free delivery on certain orders.</p>
+    </div>
+    <div class="benefit-card">
+        <h3>Secure Payment</h3>
+        <p>Safe and secure payment experience.</p>
+    </div>
+    <div class="benefit-card">
+        <h3>Easy Returns</h3>
+        <p>Simple and convenient return process.</p>
+    </div>
+    <div class="benefit-card">
+        <h3>Customer Support</h3>
+        <p>
+            We are here to help you.
+            24/7 Support
+        </p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Shop by Categories</h2>
+<div class="category-container">
+    {% if categories %}
+        {% for category in categories %}
+            <div class="category-card">
+                <a href="/products/category/{{ category.id }}">
+                    <h3>{{ category.name }}</h3>
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No categories avaliable Yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
