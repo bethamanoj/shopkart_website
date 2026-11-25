@@ -40,14 +40,16 @@ def save_product(
     discount_price: float = Form(None),
     quantity: int = Form(...),
     image: str = Form(None),
-    db=Depends(get_db)
+    db=Depends(get_db),
+    category_id: int = Form(...)
 ):
     new_product = models.Product(
         name=name,
         price=price,
         discount_price=discount_price,
         quantity=quantity,
-        image=image
+        image=image,
+        category_id=category_id
     )
     db.add(new_product)
     db.commit()
@@ -56,11 +58,12 @@ def save_product(
         status_code=303
     )
 @app.get("/add-product")
-def add_product_page(request:Request):
+def add_product_page(request:Request,db=Depends(get_db)):
+    categories = db.query(models.Category).all()
     return templates.TemplateResponse(
         request=request,
         name="add_product.html",
-        context={}
+        context={"categories":categories}
     )
 @app.get("/categories")
 def view_categories(request:Request,db=Depends(get_db)):

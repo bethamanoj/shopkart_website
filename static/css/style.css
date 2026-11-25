@@ -115,10 +115,12 @@ nav ul li a:hover{
     grid-template-columns: repeat(8,1fr);
     gap: 15px;
 }
+.category-container a{
+    text-decoration: none;
+}
 .category-card{
-    background-color: rgb(245, 247, 250);
-    border-radius: 10px;
-    text-align: center;
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
 }
 .category-card h3{

@@ -17,6 +17,14 @@
     <label>Image Name:</label>
     <input type="text" name="image">
     <br><br>
+    <label>Category:</label>
+    <select name="category_id" required>
+        <option value="">Select a category</option>
+        {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
     <button type="submit">Add Product</button>
 </form>
 {% endblock %}
